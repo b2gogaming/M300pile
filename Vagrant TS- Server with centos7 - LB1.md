@@ -1,6 +1,6 @@
 # M300 - LB1 Vagrant TeamSpeak- Server with centos7 + VLC server
 
-![Bild 1](/images/tsicon.JPG)
+![Bild1](/images/tsicon.JPG)
 
 ## Dokumentation zum Auftrag LB1
 
@@ -127,7 +127,7 @@ Nun wird vagrant mit dem Kommand "vagrant init" gestartet und eine Erstumgebung 
 
 Nachdem man die Umgebung erstellt hat, muss das vagrant File angepasst werden, sodass es unseren Bedürfnissen entspricht. In diesem Fall einem Teamspeak- Server.
 
-![Bild 2](/images/vfile.PNG)
+![Bild2](/images/vfile.PNG)
 
 * Die VM wird provisioniert auf die TSS Instance.
 * Eine Box CentOS7 wird erstellt
@@ -138,3 +138,36 @@ Nachdem man die Umgebung erstellt hat, muss das vagrant File angepasst werden, s
 * Schluss endlich werden noch die nötigen Zusatzsoftwares installiert über Shell Commands.
 
 (Installation des TSS Services, der Firewall und des eigentlichen unterstützten Servers.)
+
+(Notiz:Der VM Name in Virtualbox darf nicht gesetzt werden, da dies zu einem unerwarteten Error führt.)
+
+#### Shells und Service
+Auf dem Server müssen verschiedene Dienste zusätzlich installiert werden, damit nebst der Sicherheit, auch der eigentlich Dienst funktioniert.
+
+Folgende drei Dienste müssen definiert und installiert werden:
+
+* Firewall
+* Serverinfrastruktur
+* Server- Systemdienste
+
+Diese werden über Shell Commands in das Vagrantfile eingespielt, sodass diese beim Start der VM automatisch verwirklichen.
+
+![Bild3](/images/addFirewall.PNG)
+
+![Bild4](/images/installApp.PNG)
+
+![Bild5](/images/addSystem.PNG)
+
+## Start des Servers/ IP
+
+Der Server muss im NAT Modus gestartet werden. Sobald der Server komplett durchgestartet ist, kann man sich mit dem Kommand "vagrant ssh" auf das Server Interface verbinden. 
+
+Um die IP des Servers zu ermitteln, gibt man den Kommand "ip address" ein. Die Server IP ist unter dem eth1 herauszufiltern.
+
+## Client und Connect
+
+Um sich auf den Server zu verbinden, muss ein ein Teamspeak Client heruntergeladen werden.
+
+Unter der Option "Connections/ Verbinden" kann man die nun bekannte Server IP eingeben, sich einen Nicknamen setzen und Verbinden. Der Server wurde so definiert, dass kein Server- Passwort gesetzt erstellt wurde.
+
+![Bild6](/images/tsclient.PNG)
