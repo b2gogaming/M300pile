@@ -1,6 +1,6 @@
 # M300 - LB1 Vagrant TeamSpeak- Server with centos7 + VLC server
 
-![M300-TSBanner](images\tsicon)
+![Bild 1](/images/tsicon.JPG)
 
 ## Dokumentation zum Auftrag LB1
 
@@ -127,7 +127,7 @@ Nun wird vagrant mit dem Kommand "vagrant init" gestartet und eine Erstumgebung 
 
 Nachdem man die Umgebung erstellt hat, muss das vagrant File angepasst werden, sodass es unseren Bedürfnissen entspricht. In diesem Fall einem Teamspeak- Server.
 
-![Vagrantfile](images\vfile)
+![Bild 2](/images/vfile.PNG)
 
 * Die VM wird provisioniert auf die TSS Instance.
 * Eine Box CentOS7 wird erstellt
