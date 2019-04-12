@@ -26,6 +26,7 @@ Die Service werden mit dem Compose Deamon zusammengeführt zu einem Image zusamm
 
 ## Technische Angaben
 
+![Bild6](/images/nplan.JPG)
 
 Benötigte Tools:
 * Docker Deamon
